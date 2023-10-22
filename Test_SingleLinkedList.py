@@ -6,7 +6,7 @@ from SingleLinkedList import SingleLinkedList
 class TestSingleLinkedList(unittest.TestCase):
 
     def test_clear_empty_list_expected_empyt_list(self):
-        # arange
+        # arrange
         lista_testowa = SingleLinkedList()
         # act
         lista_testowa.clear()
