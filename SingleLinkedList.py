@@ -4,7 +4,7 @@ class SingleLinkedList:
         self.head = None
 
     def clear(self):
-        pass
+        self.head = None
 
     def append(self, append):
         self.head = append

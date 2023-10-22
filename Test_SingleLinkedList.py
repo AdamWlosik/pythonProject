@@ -13,11 +13,14 @@ class TestSingleLinkedList(unittest.TestCase):
         # assert
         self.assertEqual(None, lista_testowa.head)
 
-    def test_not_empty_list(self):
+    def test_append(self):
         lista_testowa = SingleLinkedList()
         test = 1
         lista_testowa.append(test)
         self.assertEqual(test, lista_testowa.head)
 
+    def test_not_empty(self):
+        lista_testowa = SingleLinkedList()
+        self.assertNotEqual(None, lista_testowa.head)
 # test dla nie pusta lista
 # test dla append
