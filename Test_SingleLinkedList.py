@@ -1,6 +1,6 @@
 import unittest
 
-from SingleLinkedList import SingleLinkedList
+from SingleLinkedList import SingleLinkedList, Node
 
 
 class TestSingleLinkedList(unittest.TestCase):
@@ -20,7 +20,13 @@ class TestSingleLinkedList(unittest.TestCase):
         self.assertEqual(test, lista_testowa.head)
 
     def test_not_empty(self):
+        node1 = Node(1)
+        node2 = Node(2)
+        node3 = Node(3)
         lista_testowa = SingleLinkedList()
-        self.assertNotEqual(None, lista_testowa.head)
-# test dla nie pusta lista
+        lista_testowa.head = node1
+        node1.next = node2
+        node2.next = node3
+        self.assertNotEqual(None, lista_testowa.head.value)
+# test dla niepusta lista
 # test dla append
