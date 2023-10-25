@@ -20,3 +20,4 @@ print(silnia(10))
 #print(silnia(10.3))
 #print(silnia(0))
 #print(silnia("a"))
+
