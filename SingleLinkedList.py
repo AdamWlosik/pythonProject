@@ -7,7 +7,13 @@ class SingleLinkedList:
         self.head = None
 
     def append(self, append):
-        self.head = append
+        if not self.head:
+            self.head = Node(append)
+        else:
+            itr = self.head
+            while (itr.next):
+                itr = itr.next
+            itr.next = Node(append)
 
     def remove(self):
         pass
@@ -27,4 +33,4 @@ test = SingleLinkedList()
 test.head = node1
 node1.next = node2
 node2.next = node3
-i = 2
+
