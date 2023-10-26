@@ -45,7 +45,8 @@ class TestSingleLinkedList(unittest.TestCase):
         lista_testowa.head = node
         lista_testowa.remove(1)
         self.assertEqual(None, lista_testowa.head)
-    # przetestować gdy lista ma 5 elementów i żaden nie jest do usunięcia
+
+    # przetestować gdy lista ma 5 elementów i żaden nie jest do usunięcia, na później
 
     def test_remove_center_element_expected_element_remove(self):
         lista_testowa = SingleLinkedList()
@@ -78,11 +79,9 @@ class TestSingleLinkedList(unittest.TestCase):
         self.assertEqual(5, lista_testowa.len())
 
 
-
-
 if __name__ == '__main__':
     unittest.main()
 
-# kontekst, protokół iteratora
+# kontekst protokół iteratora
 # len
 # remove test
