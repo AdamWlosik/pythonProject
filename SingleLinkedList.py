@@ -18,6 +18,8 @@ class SingleLinkedList:
     def remove(self, remove):
         if not self.head:
             raise ValueError()
+        elif self.head == remove:
+            self.head = None
         else:
             itr = self.head
             while (itr.next):

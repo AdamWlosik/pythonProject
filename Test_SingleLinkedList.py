@@ -43,7 +43,7 @@ class TestSingleLinkedList(unittest.TestCase):
         lista_testowa = SingleLinkedList()
         node = Node(1)
         lista_testowa.head = node
-        lista_testowa.remove(1)
+        lista_testowa.remove(node)
         self.assertEqual(None, lista_testowa.head)
 
     # przetestować gdy lista ma 5 elementów i żaden nie jest do usunięcia, na później
@@ -75,8 +75,9 @@ class TestSingleLinkedList(unittest.TestCase):
         node2.next = node3
         node3.next = node4
         node4.next = node5
+        test = 5
         lista_testowa.len()
-        self.assertEqual(5, lista_testowa.len())
+        self.assertEqual(test, lista_testowa.len())
 
 
 if __name__ == '__main__':
