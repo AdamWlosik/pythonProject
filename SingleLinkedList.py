@@ -20,10 +20,6 @@ class SingleLinkedList:
             raise ValueError()
         else:
             itr = self.head
-            temp = Node(0)
-            i = 1
-            x = 1
-
             while (itr.next):
                 if itr.next == remove:
                     print("if")
