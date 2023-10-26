@@ -1,7 +1,7 @@
 class SingleLinkedList:
+
     def __init__(self):
         self.head = None
-        # self.list = []
 
     def clear(self):
         self.head = None
@@ -27,6 +27,15 @@ class SingleLinkedList:
                     print("if itr value", itr.value)
                     itr.next = itr.next.next
                 itr = itr.next
+
+    def len(self):
+        itr = self.head
+        len = 1
+        while (itr.next):
+            len += 1
+            itr = itr.next
+        return len
+
 
 
 class Node:

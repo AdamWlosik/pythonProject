@@ -62,12 +62,27 @@ class TestSingleLinkedList(unittest.TestCase):
         lista_testowa.remove(node3)
         self.assertEqual(node2.next, node4)
 
+    def test_len_expected_list_len(self):
+        lista_testowa = SingleLinkedList()
+        node1 = Node(1)
+        node2 = Node(2)
+        node3 = Node(3)
+        node4 = Node(4)
+        node5 = Node(5)
+        lista_testowa.head = node1
+        node1.next = node2
+        node2.next = node3
+        node3.next = node4
+        node4.next = node5
+        lista_testowa.len()
+        self.assertEqual(5, lista_testowa.len())
+
+
 
 
 if __name__ == '__main__':
     unittest.main()
 
-# test dla append
 # kontekst, protokół iteratora
 # len
 # remove test
