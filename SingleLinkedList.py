@@ -30,12 +30,11 @@ class SingleLinkedList:
 
     def len(self):
         itr = self.head
-        len = 1
+        count = 1
         while (itr.next):
-            len += 1
+            count += 1
             itr = itr.next
-        return len
-
+        return count
 
 
 class Node:
