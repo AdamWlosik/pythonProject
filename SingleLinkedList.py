@@ -30,7 +30,6 @@ class SingleLinkedList:
                     print("if itr", itr.next)
                     print("if itr value", itr.value)
                     itr.next = itr.next.next
-                    x = 2
                 itr = itr.next
 
 
