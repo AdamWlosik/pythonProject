@@ -24,29 +24,14 @@ class SingleLinkedList:
             i = 1
             x = 1
 
-            while (itr):
-                print()
-                print(" przejście ", i)
-                i += 1
-                if itr == remove and x == 1:
+            while (itr.next):
+                if itr.next == remove:
                     print("if")
-                    print("if itr", itr)
+                    print("if itr", itr.next)
                     print("if itr value", itr.value)
-                    temp = itr
-                    itr = itr.next
+                    itr.next = itr.next.next
                     x = 2
-                else:
-                    print("else")
-                    print("else itr", itr)
-                    print("else temp", temp)
-                    print("else temp value", temp.value)
-                    print("else head", self.head)
-                    print("else head value", self.head.value)
-                    itr = itr.next
-                if x == 2:
-                    print("jestem")
-                    itr = temp  # tutaj powinna być podmiana
-                    x = 3
+                itr = itr.next
 
 
 class Node:
