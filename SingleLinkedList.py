@@ -22,9 +22,6 @@ class SingleLinkedList:
             itr = self.head
             while (itr.next):
                 if itr.next == remove:
-                    print("if")
-                    print("if itr", itr.next)
-                    print("if itr value", itr.value)
                     itr.next = itr.next.next
                 itr = itr.next
 

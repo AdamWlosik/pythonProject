@@ -63,7 +63,7 @@ class TestSingleLinkedList(unittest.TestCase):
         lista_testowa.remove(node3)
         self.assertEqual(node2.next, node4)
 
-    def test_len_expected_list_len(self):
+    def test_len_expected_list_length(self):
         lista_testowa = SingleLinkedList()
         node1 = Node(1)
         node2 = Node(2)
