@@ -20,35 +20,33 @@ class SingleLinkedList:
             raise ValueError()
         else:
             itr = self.head
-            temp = self.head
+            temp = Node(0)
             i = 1
+            x = 1
 
-            while (itr.next):
+            while (itr):
                 print()
                 print(" przejście ", i)
                 i += 1
-                if itr == remove:
+                if itr == remove and x == 1:
                     print("if")
                     print("if itr", itr)
                     print("if itr value", itr.value)
-                    itr = itr.next
-
-
-                else:
-                    #Node(temp.value)
                     temp = itr
                     itr = itr.next
+                    x = 2
+                else:
                     print("else")
                     print("else itr", itr)
                     print("else temp", temp)
                     print("else temp value", temp.value)
                     print("else head", self.head)
                     print("else head value", self.head.value)
-
-
-
-
-
+                    itr = itr.next
+                if x == 2:
+                    print("jestem")
+                    itr = temp  # tutaj powinna być podmiana
+                    x = 3
 
 
 class Node:
@@ -57,7 +55,7 @@ class Node:
         self.next = None
 
 
-lista_testowa = SingleLinkedList()
+'''lista_testowa = SingleLinkedList()
 node1 = Node(1)
 node2 = Node(2)
 node3 = Node(3)
@@ -70,5 +68,4 @@ node3.next = node4
 node4.next = node5
 lista_testowa.remove(node3)
 i = 2
-
-
+'''
