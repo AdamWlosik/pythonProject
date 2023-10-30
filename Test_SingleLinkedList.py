@@ -93,12 +93,13 @@ class TestSingleLinkedList(unittest.TestCase):
         node4.next = node5
         test = 5
         # lista_testowa.len()
-        self.assertEqual(test, lista_testowa.__len__())
+        self.assertEqual(test, len(lista_testowa))
 
 
 if __name__ == '__main__':
     unittest.main()
 
-# kontekst protokół iteratora
-# len
-# remove test
+# secure programing, dodatkowo
+# rekurnecja
+# metody wbudowane print(dir(it))
+# hierarchia wyjątków

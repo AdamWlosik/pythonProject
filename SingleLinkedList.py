@@ -1,7 +1,22 @@
+class SingleLinkedListGenerator:
+    def __init__(self, list_head):
+        self.list_head = list_head
+
+    def __next__(self):
+        if not self.list_head:
+            raise StopIteration()
+        tmp_value = self.list_head
+        self.list_head = self.list_head.next
+        return tmp_value
+
+
 class SingleLinkedList:
 
     def __init__(self):
         self.head = None
+
+    def __iter__(self):
+        return SingleLinkedListGenerator(self.head)
 
     def clear(self):
         self.head = None
@@ -25,15 +40,19 @@ class SingleLinkedList:
             while (itr.next):
                 if itr.next == remove:
                     itr.next = itr.next.next
+                print(itr)
                 itr = itr.next
 
     def __len__(self):
-        itr = self.head
-        count = 1
-        while (itr.next):
-            count += 1
-            itr = itr.next
-        return count
+        if self.head is None:
+            return 0
+        else:
+            itr = self.head
+            count = 1
+            while (itr.next):
+                count += 1
+                itr = itr.next
+            return count
 
 
 class Node:
