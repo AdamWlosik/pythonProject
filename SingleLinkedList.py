@@ -27,7 +27,7 @@ class SingleLinkedList:
                     itr.next = itr.next.next
                 itr = itr.next
 
-    def len(self):
+    def __len__(self):
         itr = self.head
         count = 1
         while (itr.next):
