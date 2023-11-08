@@ -103,3 +103,16 @@ if __name__ == '__main__':
 # rekurnecja
 # metody wbudowane print(dir(it))
 # hierarchia wyjątków
+
+
+# 08.11
+# lista krokow
+# schemat blokowy
+# pseudo kod
+# heurystyka
+# algorytm genetyczny!!
+# problem plecakowy
+# rozwiązać problem plecakowy jako heurystyka przygotować opis jednym z 3 sposobów wyżej
+# 8 przedmiotów losowe wagi 25kg w plecaku
+
+
