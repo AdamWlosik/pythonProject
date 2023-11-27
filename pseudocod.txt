@@ -1,0 +1,27 @@
+funkcaj plecak(waga, wartosc, waga_calkowita):
+    lista = lista_slownikow_wskaznik_wartosci_produktu = []
+    dla i w zakresie len(waga) wykonuj:
+        lista_dodaj:
+            'wartosc': wartosc[i]
+            'waga': waga[i]
+            'wspolczynnk_wartosc_waga': (wartosc(i)/waga(i))
+
+    lista = sortowanie
+    wyswietlenie lista
+
+    pozostale_miejsce = waga_calkowita
+    wartosc_produktow = 0
+    lista_spakowanych_produkotw = []
+
+    dopoki i < dlugosci(lista):
+        jezeli lista[i][waga] <= pozostale_miejsce:
+            pozostale_miejsce -= lista[i]['waga']
+            wartosc_produktow += lista[i]['wartosc']
+            lista_spakowanych_produktow.dodaj(lista[i])
+        zwiekszenie i o 1
+    zwracamy wartosc_produktow, lista_spakowanych_produktow
+
+
+
+
+
