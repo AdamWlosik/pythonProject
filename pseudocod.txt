@@ -4,9 +4,7 @@ funkcaj plecak(waga, wartosc, waga_calkowita):
         lista_dodaj:
             'wartosc': wartosc[i]
             'waga': waga[i]
-            'wspolczynnk_wartosc_waga': (wartosc(i)/waga(i))
 
-    lista = sortowanie
     wyswietlenie lista
 
     pozostale_miejsce = waga_calkowita
