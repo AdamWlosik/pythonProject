@@ -29,6 +29,8 @@ dla i w zakresie (0, 8)
 
 wystwietl plecak(waga, wartosc)
 
+# allgorytm zachłanny: dodać słownik ratio i posorotwać listę wdg niego
+# mój algorytm wkłada po kolei wdg listy czy powinna zostać dodana jakaś losowaść
 
 
 
