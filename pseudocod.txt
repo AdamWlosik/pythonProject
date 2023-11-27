@@ -1,7 +1,7 @@
 funkcaj plecak(waga, wartosc, waga_calkowita):
-    lista = lista_slownikow_wskaznik_wartosci_produktu = []
+    lista  = [] # lista słowników waga, wartosc
     dla i w zakresie len(waga) wykonuj:
-        lista_dodaj:
+        lista_dodaj: # dodajemy słowniki do listy
             'wartosc': wartosc[i]
             'waga': waga[i]
 
@@ -16,9 +16,18 @@ funkcaj plecak(waga, wartosc, waga_calkowita):
             pozostale_miejsce -= lista[i]['waga']
             wartosc_produktow += lista[i]['wartosc']
             lista_spakowanych_produktow.dodaj(lista[i])
+            wyswietl dodany_produkt, wartosc_produktu, pozostale_miejsce
         zwiekszenie i o 1
     zwracamy wartosc_produktow, lista_spakowanych_produktow
 
+waga = []
+wartosc = []
+
+dla i w zakresie (0, 8)
+    waga.dodaj liczba_lososwa_z_przedzialu(1, 25)
+    wartosc.dodaj liczba_losowa_z_przedzialu(1, 100)
+
+wystwietl plecak(waga, wartosc)
 
 
 
