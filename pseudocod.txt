@@ -1,8 +1,8 @@
 funkcaj plecak(waga, wartosc, waga_calkowita):
     lista  = [] # lista słowników waga, wartosc
     dla i w zakresie len(waga) wykonuj:
-        lista_dodaj: # dodajemy słowniki do listy
-            'wartosc': wartosc[i]
+        lista_dodaj: # dodajemy do listy słowników
+            'wartosc': wartosc[i]   # słowniki
             'waga': waga[i]
 
     wyswietlenie lista
