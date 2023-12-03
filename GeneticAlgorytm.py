@@ -18,19 +18,41 @@ print(first_generation(ITEMS))'''
 
 
 def first_generation():
-    return [[(random.choice([True, False])) for _ in range(len(ITEMS))] for _ in range(0, 300)]
+    generation = [[(random.choice([True, False])) for _ in range(len(ITEMS))] for _ in range(0, 300)]
+    return generation
 
 
 print(first_generation())
 
 
 def fitness(individual):
-    individual_fintess = 0
+    individual_fitness = 0
     for index, i in enumerate(individual):
         if i is True:
-            individual_fintess += ITEMS[index][1]
+            individual_fitness += ITEMS[index][1]
+        if individual_fitness > 25:
+            return 0
 
-    return individual_fintess
+    return individual_fitness
+
+
+def selection(generation):
+    x = 300
+    while x > 50:
+        select_1 = random.sample(generation)
+        select_2 = random.sample(generation)
+        fitness_1 = fitness(select_1)
+        fitness_2 = fitness(select_2)
+
+        if fitness_1 > fitness_2:
+            return select_1
+        else:
+            return select_2
+        x -= 1
+
+
+def crossover():
+    pass
 
 
 def iterate_for_fitness(generation):
