@@ -22,7 +22,7 @@ def first_generation():
     return generation
 
 
-print(first_generation())
+#print(first_generation())
 
 
 def fitness(individual):
@@ -39,16 +39,21 @@ def fitness(individual):
 def selection(generation):
     x = 300
     while x > 50:
-        select_1 = random.sample(generation)
-        select_2 = random.sample(generation)
+        select_1 = random.sample(generation, k=1)
+        select_2 = random.sample(generation, k=1)
         fitness_1 = fitness(select_1)
         fitness_2 = fitness(select_2)
+        print(select_1, fitness_1)
+        print(select_2, fitness_2)
 
         if fitness_1 > fitness_2:
             return select_1
         else:
             return select_2
         x -= 1
+
+
+print(selection(first_generation()))
 
 
 def crossover():
