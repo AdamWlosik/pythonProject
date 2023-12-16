@@ -1,6 +1,7 @@
 import random
 import pdb
 import matplotlib.pyplot as plt
+
 ITEMS = [(20, 2), (70, 5), (100, 12), (200, 18), (300, 8), (120, 10), (80, 6), (50, 3), (250, 20), (30, 7)]
 
 '''def first_generation(items):
@@ -32,13 +33,13 @@ def iterate_for_fitness(generation):
 
 
 def fitness(individual):
-    #breakpoint()
+    # breakpoint()
     individual_fitness = 0
     individual_weight = 0
     for index, i in enumerate(individual):
         if i == 0:
             continue
-        #print("ITEMS:", ITEMS[index][1])
+        # print("ITEMS:", ITEMS[index][1])
         individual_fitness += ITEMS[index][0]
         individual_weight += ITEMS[index][1]
         if individual_weight > 25:
@@ -72,7 +73,7 @@ def crossover(first, second):
 def iterate_for_mutation(next_generation, mut_rate):
     for i in next_generation:
         if random.random() < mut_rate:
-            #breakpoint()
+            # breakpoint()
             mutation(i)
 
 
@@ -82,43 +83,48 @@ def mutation(mut):
 
 
 def calculate_statistic(iterate_for_fit):
-        #breakpoint()
-        fitnesses = [item[1] for item in iterate_for_fit]
-        maxf = max(fitnesses)
-        minf = min(fitnesses)
-        avgf = sum(fitnesses)/len(fitnesses)
-        print(maxf, minf, avgf)
-        return maxf, minf, avgf
+    # breakpoint()
+    fitnesses = [item[1] for item in iterate_for_fit]
+    maxf = max(fitnesses)
+    minf = min(fitnesses)
+    avgf = sum(fitnesses) / len(fitnesses)
+    print(maxf, minf, avgf)
+    return maxf, minf, avgf
 
 
-'''def create_new_generation(generation, mut_rate):
-    new_gen = []
-    for i in range(0, len(generation)):
-        parent_1 = selection(generation)
-        parent_2 = selection(generation)
-        child = crossover(parent_1, parent_2)
+def diagram(max_fitness_value, min_fitness_value, avg_fitness_value):
+    generations = list(range(1, 1001))
+    plt.plot(generations, max_fitness_value, label='MAX Fitness')
+    plt.plot(generations, min_fitness_value, label='MIN Fitness')
+    plt.plot(generations, avg_fitness_value, label='AVG Fitness')
 
-        if random.random() < mut_rate:
-            child = mutation(child)
+    plt.xlabel('Generations')
+    plt.ylabel('Fitness')
+    plt.legend()
+    plt.show()
 
-        new_gen.append(child)
-    return new_gen
-
-
-print("New gen:", create_new_generation(first_generation(), 0.083))'''
 
 if __name__ == "__main__":
     generation = first_generation()
     x = 0
-    statistics = []
+    # statistics = []
+    max_fitness_values = []
+    min_fitness_values = []
+    avg_fitness_value = []
     while x < 1000:
         iterate_for_fit = iterate_for_fitness(generation)
-        statistics.append(calculate_statistic(iterate_for_fit))
+        # statistics.append(calculate_statistic(iterate_for_fit))
+        max_fitness, min_fitness, avg_fitness = (calculate_statistic(iterate_for_fit))
+        max_fitness_values.append(max_fitness)
+        min_fitness_values.append(min_fitness)
+        avg_fitness_value.append(avg_fitness)
         selected = selection(iterate_for_fit)
         next_generation = iterate_for_crossover(selected)
         iterate_for_mutation(next_generation, 0.083)
         x += 1
         generation = next_generation
+
+    diagram(max_fitness_values, min_fitness_values, avg_fitness_value)
 
 # dopisać zwracanie uwagi na wage 25kg if waga > 25 individual_fitness = 0
 # selekcja 50 z najlepszą fintess
